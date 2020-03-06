@@ -2,10 +2,35 @@
 //
 
 #include <iostream>
-
+#include <opencv.hpp>
+using namespace cv;
 int main()
 {
-    std::cout << "Hello World!\n";
+	cv::Mat dispMat=imread("E:\\桌面壁纸\\空白.png");
+	cv::Point pt;
+	pt.x = 100;
+	pt.y = 100;
+	circle(dispMat, pt, 5, CV_RGB(255, 0, 0), 1, 8, 0);
+	
+	cv::Point pt1;
+	cv::Point pt2;
+	pt1.x = 50;
+	pt1.y = 100;
+	pt2.x = 80;
+	pt2.y = 150;
+	line(dispMat, pt1, pt2, CV_RGB(255, 0, 0), 1, 8, 0);
+
+	cv::Rect rect;
+	rect.x = 10;
+	rect.y = 10;
+	rect.width = 60;
+	rect.height = 60;
+	rectangle(dispMat, rect, CV_RGB(255, 0, 0), 1, 8, 0);
+	imshow("dispMat", dispMat);
+
+    waitKey(0);
+
+    /*std::cout << "Hello World!\n";*/
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
